@@ -12,7 +12,7 @@ pub fn get_trigrams_with_positions(text: &str) -> HashMap<String, u32> {
         .into_iter()
         .map(|(trigram, count)| (count, trigram))
         .collect();
-    count_vec.sort_by(|a, b| b.cmp(a));
+    count_vec.sort_unstable_by(|a, b| b.cmp(a));
 
     count_vec
         .into_iter()
